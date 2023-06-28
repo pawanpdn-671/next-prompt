@@ -30,9 +30,7 @@ const Form = ({ type, post, setPost, submitting, handleSubmit }) => {
 						cols="30"
 						rows="10"></textarea>
 				</label>
-				<label
-					htmlFor="
-				">
+				<label>
 					<span className="font-satoshi font-semibold text-base text-grap-700">
 						Tag
 						<span className="font-normal">

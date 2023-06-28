@@ -1,4 +1,4 @@
-import mongoose, { mongo } from "mongoose";
+import mongoose from "mongoose";
 let isConnected = false; //tracking the connection
 
 export const connectToDB = async () => {
