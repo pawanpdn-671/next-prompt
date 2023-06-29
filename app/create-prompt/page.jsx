@@ -23,7 +23,13 @@ const CreatePrompt = () => {
 				body: JSON.stringify({
 					prompt: post.prompt,
 					userId: session?.user.id,
-					tag: post.tag,
+					tag: post.tag
+						?.split(" ")
+						.map((t) => {
+							if (t.includes("#")) return t.slice(1);
+							else return t;
+						})
+						.join(" "),
 				}),
 			});
 			if (response.ok) {

@@ -36,7 +36,13 @@ const EditPrompt = () => {
 				method: "PATCH",
 				body: JSON.stringify({
 					prompt: post.prompt,
-					tag: post.tag,
+					tag: post.tag
+						?.split(" ")
+						.map((t) => {
+							if (t.includes("#")) return t.slice(1);
+							else return t;
+						})
+						.join(" "),
 				}),
 			});
 			if (response.ok) {
