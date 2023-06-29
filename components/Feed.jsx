@@ -48,7 +48,10 @@ const Feed = () => {
 		if (e.target.value) {
 			setSearchText(e.target.value);
 			filterData(e.target.value);
-		} else setSearchResults(posts);
+		} else {
+			setSearchText("");
+			setSearchResults(posts);
+		}
 	};
 
 	const handleTagClick = (tag) => {
